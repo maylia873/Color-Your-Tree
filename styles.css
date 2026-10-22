@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Patrick Hand", cursive;
+  background: #fff;
+  color: #111;
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Circle on the left, sliders on the right */
+.content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+#circle {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  background: rgb(255, 102, 0); /* JS will change this */
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+}
+
+/* Slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 180px;
+  height: 10px;
+  background: #ffe0c8;
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Button */
+#start-btn {
+  font-family: inherit;
+  font-size: 1.3rem;
+  background: none;
+  border: 2px solid #111;
+  padding: 6px 14px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+#start-btn:hover {
+  background: #111;
+  color: #fff;
+}
