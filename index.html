@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rotating 8 Rainbow Circles</title>
+  <title>Color Mood Playlist Generator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-  <div class="rainbow-wrapper">
-    <!-- Center Dot -->
-    <div class="center-glow"></div>
+  <!-- Navigation Control -->
+  <button id="backBtn" class="nav-btn hidden">← Back to Wheel</button>
 
-    <!-- Rotating Ring Container -->
+  <div class="rainbow-wrapper" id="wrapper">
+    <div class="center-glow" id="centerGlow"></div>
     <div class="rainbow-ring" id="ring"></div>
+    <div class="keywords-container" id="keywordsContainer"></div>
+  </div>
+
+  <!-- Action Bar & Playlist Output -->
+  <div class="playlist-section hidden" id="playlistSection">
+    <button id="generateBtn" class="generate-btn">Generate Playlist</button>
+    <div id="songList" class="song-list"></div>
   </div>
 
   <script src="app.js"></script>
 </body>
+
 </html>
