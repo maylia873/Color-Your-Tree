@@ -1,30 +1,29 @@
-// Grab the elements from the HTML
-const circle = document.getElementById("circle");
-const redSlider = document.getElementById("red");
-const greenSlider = document.getElementById("green");
-const blueSlider = document.getElementById("blue");
-const startBtn = document.getElementById("start-btn");
+// 8 HSL Rainbow Colors evenly distributed around the spectrum
+const rainbowColors = [
+  'hsl(0, 100%, 60%)',    // Red
+  'hsl(35, 100%, 55%)',   // Orange
+  'hsl(55, 100%, 50%)',   // Yellow
+  'hsl(120, 100%, 50%)',  // Green
+  'hsl(175, 100%, 45%)',  // Teal/Cyan
+  'hsl(215, 100%, 60%)',  // Blue
+  'hsl(270, 100%, 60%)',  // Indigo
+  'hsl(320, 100%, 60%)'   // Pink
+];
 
-// Update the circle color from the slider values
-function updateColor() {
-  const r = redSlider.value;
-  const g = greenSlider.value;
-  const b = blueSlider.value;
-  circle.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-}
+const ring = document.getElementById('ring');
+const totalCircles = 8;
 
-// Run whenever any slider moves
-redSlider.addEventListener("input", updateColor);
-greenSlider.addEventListener("input", updateColor);
-blueSlider.addEventListener("input", updateColor);
+// Create and position the 8 rainbow circles dynamically
+rainbowColors.forEach((color, index) => {
+  const circle = document.createElement('div');
+  circle.className = 'circle';
 
-// Button click: do something with the chosen color
-startBtn.addEventListener("click", () => {
-  const color = circle.style.backgroundColor || "rgb(255, 102, 0)";
-  console.log("Chosen color:", color);
-  // Later: use the color to pick a playlist, or go to another page, e.g.
-  // window.location.href = "playlist.html";
+  // Calculate position angle: 360° / 8 = 45° separation
+  const angle = (360 / totalCircles) * index;
+
+  // Pass CSS custom variables directly to element
+  circle.style.setProperty('--angle', `${angle}deg`);
+  circle.style.setProperty('--color', color);
+
+  ring.appendChild(circle);
 });
-
-// Set the starting color
-updateColor();
