@@ -3,45 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Build Your Tree Playlist</title>
-
-  <!-- Optional handwriting font -->
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-
-  <!-- Link the CSS file -->
+  <title>Rotating 8 Rainbow Circles</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="main">
-    <h1>Build Your Tree Playlist!</h1>
 
-    <div class="content">
-      <!-- The circle that changes color -->
-      <div id="circle"></div>
+  <div class="rainbow-wrapper">
+    <!-- Center Dot -->
+    <div class="center-glow"></div>
 
-      <!-- The three sliders -->
-      <div class="sliders">
-        <label class="slider-row">
-          <input type="range" id="red" min="0" max="255" value="255">
-          <span>R</span>
-        </label>
+    <!-- Rotating Ring Container -->
+    <div class="rainbow-ring" id="ring"></div>
+  </div>
 
-        <label class="slider-row">
-          <input type="range" id="green" min="0" max="255" value="102">
-          <span>G</span>
-        </label>
-
-        <label class="slider-row">
-          <input type="range" id="blue" min="0" max="255" value="0">
-          <span>B</span>
-        </label>
-
-        <button id="start-btn">Start Listening &gt;</button>
-      </div>
-    </div>
-  </main>
-
-  <!-- Link the JS file at the end of body -->
   <script src="app.js"></script>
 </body>
 </html>
